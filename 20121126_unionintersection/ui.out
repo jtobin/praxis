@@ -1,0 +1,180 @@
+=== prop_i0ResultElementsAreInBoth from ui.hs:64 ===
++++ OK, passed 1000 tests.
+
+=== prop_i1ResultElementsAreInBoth from ui.hs:68 ===
++++ OK, passed 1000 tests.
+
+=== prop_i2ResultElementsAreInBoth from ui.hs:72 ===
++++ OK, passed 1000 tests.
+
+=== prop_u0ResultElementsInAtLeastOne from ui.hs:77 ===
++++ OK, passed 1000 tests.
+
+=== prop_u1ResultElementsInAtLeastOne from ui.hs:81 ===
++++ OK, passed 1000 tests.
+
+=== prop_u2ResultElementsInAtLeastOne from ui.hs:85 ===
++++ OK, passed 1000 tests.
+
+warming up
+estimating clock resolution...
+mean is 1.653605 us (320001 iterations)
+found 2070 outliers among 319999 samples (0.6%)
+  1657 (0.5%) high severe
+estimating cost of a clock call...
+mean is 65.59666 ns (17 iterations)
+found 2 outliers among 17 samples (11.8%)
+  2 (11.8%) high severe
+
+benchmarking intersection - i0   /i0s
+mean: 241.8527 us, lb 240.9886 us, ub 243.1653 us, ci 0.950
+std dev: 5.370071 us, lb 3.981611 us, ub 8.452537 us, ci 0.950
+found 7 outliers among 100 samples (7.0%)
+  4 (4.0%) high mild
+  3 (3.0%) high severe
+variance introduced by outliers: 15.189%
+variance is moderately inflated by outliers
+
+benchmarking intersection - i0   /i0m
+mean: 1.349664 ms, lb 1.343737 ms, ub 1.356489 ms, ci 0.950
+std dev: 32.54633 us, lb 27.51927 us, ub 39.69676 us, ci 0.950
+found 4 outliers among 100 samples (4.0%)
+  4 (4.0%) high mild
+variance introduced by outliers: 18.030%
+variance is moderately inflated by outliers
+
+benchmarking intersection - i0   /i0l
+mean: 10.43376 ms, lb 10.26692 ms, ub 10.68256 ms, ci 0.950
+std dev: 1.030502 ms, lb 766.8110 us, ub 1.357862 ms, ci 0.950
+found 11 outliers among 100 samples (11.0%)
+  10 (10.0%) high severe
+variance introduced by outliers: 78.975%
+variance is severely inflated by outliers
+
+benchmarking intersection - i1   /i1s
+mean: 37.62627 us, lb 36.20585 us, ub 39.56645 us, ci 0.950
+std dev: 8.452334 us, lb 6.684560 us, ub 12.01732 us, ci 0.950
+found 3 outliers among 100 samples (3.0%)
+  2 (2.0%) high mild
+  1 (1.0%) high severe
+variance introduced by outliers: 95.715%
+variance is severely inflated by outliers
+
+benchmarking intersection - i1   /i1m
+mean: 60.59575 us, lb 60.08477 us, ub 61.36355 us, ci 0.950
+std dev: 3.184276 us, lb 2.424147 us, ub 4.954732 us, ci 0.950
+found 9 outliers among 100 samples (9.0%)
+  7 (7.0%) high mild
+  2 (2.0%) high severe
+variance introduced by outliers: 50.470%
+variance is severely inflated by outliers
+
+benchmarking intersection - i1   /i1l
+mean: 149.5444 us, lb 148.7898 us, ub 150.9952 us, ci 0.950
+std dev: 5.176023 us, lb 3.219088 us, ub 9.524480 us, ci 0.950
+found 5 outliers among 100 samples (5.0%)
+  4 (4.0%) high severe
+variance introduced by outliers: 30.664%
+variance is moderately inflated by outliers
+
+benchmarking intersection - i2   /i2s
+mean: 9.463958 us, lb 9.407915 us, ub 9.542428 us, ci 0.950
+std dev: 336.3714 ns, lb 257.5346 ns, ub 423.1264 ns, ci 0.950
+found 10 outliers among 100 samples (10.0%)
+  3 (3.0%) high mild
+  7 (7.0%) high severe
+variance introduced by outliers: 31.653%
+variance is moderately inflated by outliers
+
+benchmarking intersection - i2   /i2m
+mean: 15.80304 us, lb 15.75625 us, ub 15.86975 us, ci 0.950
+std dev: 283.1245 ns, lb 217.4457 ns, ub 380.9612 ns, ci 0.950
+found 5 outliers among 100 samples (5.0%)
+  3 (3.0%) high mild
+  2 (2.0%) high severe
+variance introduced by outliers: 10.411%
+variance is moderately inflated by outliers
+
+benchmarking intersection - i2   /i2l
+mean: 30.04472 us, lb 29.94999 us, ub 30.17653 us, ci 0.950
+std dev: 569.5918 ns, lb 435.6022 ns, ub 743.6671 ns, ci 0.950
+found 6 outliers among 100 samples (6.0%)
+  3 (3.0%) high mild
+  3 (3.0%) high severe
+variance introduced by outliers: 11.374%
+variance is moderately inflated by outliers
+
+benchmarking union - u0   /u0s
+mean: 237.2854 us, lb 231.8887 us, ub 243.8647 us, ci 0.950
+std dev: 30.44916 us, lb 24.46645 us, ub 42.27376 us, ci 0.950
+found 2 outliers among 100 samples (2.0%)
+  1 (1.0%) high severe
+variance introduced by outliers: 86.282%
+variance is severely inflated by outliers
+
+benchmarking union - u0   /u0m
+mean: 424.4515 us, lb 415.2468 us, ub 440.1109 us, ci 0.950
+std dev: 60.34614 us, lb 41.67318 us, ub 109.6783 us, ci 0.950
+found 1 outliers among 100 samples (1.0%)
+  1 (1.0%) high severe
+variance introduced by outliers: 88.388%
+variance is severely inflated by outliers
+
+benchmarking union - u0   /u0l
+mean: 845.0848 us, lb 827.2701 us, ub 865.6639 us, ci 0.950
+std dev: 97.83496 us, lb 86.25617 us, ub 112.0636 us, ci 0.950
+found 1 outliers among 100 samples (1.0%)
+variance introduced by outliers: 84.158%
+variance is severely inflated by outliers
+
+benchmarking union - u1   /u1s
+mean: 32.13088 us, lb 31.85796 us, ub 32.63588 us, ci 0.950
+std dev: 1.838367 us, lb 1.202909 us, ub 3.379434 us, ci 0.950
+found 12 outliers among 100 samples (12.0%)
+  11 (11.0%) high mild
+  1 (1.0%) high severe
+variance introduced by outliers: 55.449%
+variance is severely inflated by outliers
+
+benchmarking union - u1   /u1m
+mean: 65.00069 us, lb 64.02871 us, ub 66.24941 us, ci 0.950
+std dev: 5.635944 us, lb 4.652454 us, ub 7.169802 us, ci 0.950
+found 5 outliers among 100 samples (5.0%)
+  4 (4.0%) high mild
+  1 (1.0%) high severe
+variance introduced by outliers: 73.831%
+variance is severely inflated by outliers
+
+benchmarking union - u1   /u1l
+mean: 159.6619 us, lb 157.4585 us, ub 163.0561 us, ci 0.950
+std dev: 13.78931 us, lb 10.02459 us, ub 21.04754 us, ci 0.950
+found 8 outliers among 100 samples (8.0%)
+  5 (5.0%) high mild
+  3 (3.0%) high severe
+variance introduced by outliers: 73.822%
+variance is severely inflated by outliers
+
+benchmarking union - u2   /u2s
+mean: 10.83968 us, lb 10.78467 us, ub 10.92027 us, ci 0.950
+std dev: 336.8579 ns, lb 251.8153 ns, ub 441.4622 ns, ci 0.950
+found 9 outliers among 100 samples (9.0%)
+  3 (3.0%) high mild
+  6 (6.0%) high severe
+variance introduced by outliers: 25.821%
+variance is moderately inflated by outliers
+
+benchmarking union - u2   /u2m
+mean: 17.35428 us, lb 17.27169 us, ub 17.47427 us, ci 0.950
+std dev: 503.9214 ns, lb 373.6216 ns, ub 660.5846 ns, ci 0.950
+found 7 outliers among 100 samples (7.0%)
+  6 (6.0%) high severe
+variance introduced by outliers: 23.842%
+variance is moderately inflated by outliers
+
+benchmarking union - u2   /u2l
+mean: 31.64824 us, lb 31.48891 us, ub 31.94573 us, ci 0.950
+std dev: 1.078435 us, lb 668.9161 ns, ub 1.644798 us, ci 0.950
+found 4 outliers among 100 samples (4.0%)
+  4 (4.0%) high severe
+variance introduced by outliers: 29.707%
+variance is moderately inflated by outliers

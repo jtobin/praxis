@@ -1,0 +1,35 @@
+name:                x20150227-currency
+version:             0.1.0.0
+license:             MIT
+license-file:        LICENSE
+author:              Jared Tobin
+maintainer:          jared@jtobin.ca
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Currency
+  hs-source-dirs:      src-lib
+  default-language:    Haskell2010
+  build-depends:
+      aeson      >= 0.8.0.2
+    , base       >= 4.7 && < 4.8
+    , containers >= 0.5.5.1
+    , lens       >= 3.7
+    , lens-aeson >= 1.0.0.3
+    , scientific >= 0.3.3.7
+    , text       >= 1.2.0.4
+    , wreq       >= 0.3.0.1
+
+executable exchange-rate
+  main-is:             Main.hs
+  hs-source-dirs:      src-exec
+  default-language:    Haskell2010
+  ghc-options:
+    -Wall -Werror -O2
+  build-depends:
+      base                 >= 4.7.0.1 && < 4.8
+    , optparse-applicative >= 0.11.0.1
+    , scientific           >= 0.3.3.7
+    , x20150227-currency   >= 0.1.0.0
+

@@ -1,3 +1,4 @@
 dist
 .sandbox
 .cabal-sandbox
+*swp

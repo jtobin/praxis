@@ -11,7 +11,7 @@ commons = expand . intersection . fmap sparseRepr
 
 sparseRepr :: Ord a => [a] -> Map a Int
 sparseRepr = Map.fromList . fmap labelAndCount . group where
-  labelAndCount v = (head (nub v), length v)
+  labelAndCount v = (head v, length v)
 
 intersection :: (Ord k, Ord v) => [Map k v] -> Map k v
 intersection [] = Map.empty

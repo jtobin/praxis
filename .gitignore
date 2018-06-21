@@ -2,3 +2,4 @@ dist
 .sandbox
 .cabal-sandbox
 *swp
+.DS_Store

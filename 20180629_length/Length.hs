@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall -fno-warn-type-defaults #-}
 {-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE LambdaCase #-}
 
@@ -7,13 +8,13 @@ len :: [a] -> Int
 len = loop 0 where
   loop !acc = \case
     []    -> acc
-    (h:t) -> loop (succ acc) t
+    (_:t) -> loop (succ acc) t
 
 compare :: [a] -> [b] -> Ordering
 compare = loop where
   loop l r = case (l, r) of
-    (h : _, []) -> GT
-    ([], h : _) -> LT
+    (_ : _, []) -> GT
+    ([], _ : _) -> LT
     ([], [])    -> EQ
     _           -> loop (drop 1 l) (drop 1 r)
 

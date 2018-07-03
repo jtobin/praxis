@@ -36,15 +36,11 @@ hash8 (fmap C.ord -> bytes) = show (L.foldl' alg 0 bytes) where
           Just val -> val
 
 hash16 :: String -> String
-hash16 input = hash0 <> hash1 where
-  hash0 = hash8 input
-  hash1 = hash8 modified
-
-  mbytes = case fmap C.ord input of
+hash16 input = hash8 input <> hash8 modified where
+  modified = fmap C.chr mbytes
+  mbytes   = case fmap C.ord input of
     []    -> []
     (h:t) -> (h + 1) `mod` 256 : t
-
-  modified = fmap C.chr mbytes
 
 main :: IO ()
 main = do

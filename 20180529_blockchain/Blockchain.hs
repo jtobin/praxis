@@ -64,14 +64,14 @@ genesis = Block {..} where
 
 adjoin :: String -> Blockchain -> Maybe Blockchain
 adjoin str Blockchain {..} = case chain of
-    [] -> Nothing
-    (Block {..} : _) -> Just $
-      let nindex = succ index
-          ndatum = str
-          nphash = chash
-          nchash = hash16 (show nindex <> ndatum <> nphash)
-          block  = Block nindex ndatum nphash nchash
-      in  Blockchain (block : chain)
+  [] -> Nothing
+  (Block {..} : _) -> Just $
+    let nindex = succ index
+        ndatum = str
+        nphash = chash
+        nchash = hash16 (show nindex <> ndatum <> nphash)
+        block  = Block nindex ndatum nphash nchash
+    in  Blockchain (block : chain)
 
 validate :: Blockchain -> Bool
 validate Blockchain {..} = L.foldl' alg True chain where
@@ -80,7 +80,7 @@ validate Blockchain {..} = L.foldl' alg True chain where
     | otherwise = error ("invalid block: " <> show block)
 
 test :: Blockchain
-test = do
+test =
   let gen = Blockchain [genesis]
 
       bchain =
@@ -89,9 +89,9 @@ test = do
         >>= adjoin "jared sends rachel one buck"
         >>= adjoin "rachel sends shawn one buck"
 
-  case bchain of
-    Nothing -> error "impossible"
-    Just bc -> bc
+  in  case bchain of
+        Nothing -> error "impossible"
+        Just bc -> bc
 
 main :: IO ()
 main = do

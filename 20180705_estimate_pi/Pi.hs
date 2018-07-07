@@ -1,5 +1,4 @@
 {-# OPTIONS_GHC -Wall -fno-warn-type-defaults #-}
-{-# LANGUAGE ScopedTypeVariables #-}
 
 import Control.Monad.Primitive (PrimMonad, PrimState)
 import System.Random.MWC as MWC
@@ -8,22 +7,19 @@ import Pipes ((>->))
 import qualified Pipes as P
 import qualified Pipes.Prelude as P
 
-sample :: forall m. PrimMonad m => Gen (PrimState m) -> P.Producer Bool m ()
+sample
+  :: PrimMonad m
+  => Gen (PrimState m) -> P.Producer Bool m ()
 sample prng = do
-    val <- P.lift (relPrime prng)
+    val <- P.lift (rprime <$> uniform prng <*> uniform prng)
     P.yield val
     sample prng
   where
-    relPrime rng =
-      rprime <$> (uniform rng :: m Word) <*> (uniform rng :: m Word)
-
+    rprime :: Word -> Word -> Bool
     rprime a b = gcd a b == 1
 
 count :: Num a => L.Fold Bool a
-count = L.Fold alg 0 id where
-  alg acc tru
-    | tru       = acc + 1
-    | otherwise = acc
+count = L.Fold (\acc tr -> if tr then acc + 1 else acc) 0 id
 
 avg :: Fractional a => L.Fold Bool a
 avg = (/) <$> count <*> L.genericLength

@@ -51,6 +51,12 @@ test = [
   , ("Rachel", 99)
   , ("Rachel", 100)
   , ("Rachel", 81)
+  , ("Deanie", 99)
+  , ("Deanie", 75)
+  , ("Deanie", 76)
+  , ("Deanie", 74)
+  , ("Deanie", 43)
+  , ("Deanie", 69)
   ]
 
 main :: IO ()

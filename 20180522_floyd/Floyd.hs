@@ -4,18 +4,17 @@ import Data.List as L (unfoldr)
 
 floyd0 :: [[Int]]
 floyd0 = loop 1 [1..] where
-  loop n input =
-    let header = take n input
-        footer = loop (succ n) (drop n input)
+  loop size input =
+    let header = take size input
+        footer = loop (succ size) (drop size input)
     in  header : footer
 
 floyd1 :: [[Int]]
 floyd1 = L.unfoldr alg (1, 0) where
-  alg (m, n) =
-    let lbound = m
-        ubound = lbound + n
+  alg (lbound, size) =
+    let ubound = lbound + size
         range  = [lbound..ubound]
-    in  Just (range, (succ ubound, succ n))
+    in  Just (range, (succ ubound, succ size))
 
 render :: Show a => [a] -> String
 render input = case input of
